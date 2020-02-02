@@ -17,7 +17,7 @@ Configuramos o ambiente, estruturação de pastas e padronização do código
 
 #### Comandos utilizados
 
-´´´
+```
 $ yarn init -y
 $ yarn add express
 $ yarn add sucrase nodemon -D
@@ -35,7 +35,7 @@ $ yarn sequelize db:seed:all
 $ yarn add bcryptjs
 $ yarn add jsonwebtoken
 $ yarn add yup
-´´´
+```
 
 ### Adicionando middlewares e validações
 
@@ -56,16 +56,16 @@ $ yarn add yup
 ### Recipients
 ![](https://raw.githubusercontent.com/fabiovige/bootcamp2019-desafio02/master/images/recipients.jpg)
 
-´´´
+```
 $ yarn sequelize migration:create --name=create-recipients
-´´´
+```
 
 ### Atualização da migratiosn users
 
 - Adicionando a coluna admin:boolean para checar users
 - Foi criado uma nova migration apenas para adicionar uma coluna conforme recomendação
 
-´´´
+```
 $ module.exports = {
 $   up: (queryInterface, Sequelize) => {
 $     return queryInterface.addColumn('users', 'admin', {
@@ -79,7 +79,7 @@ $  down: queryInterface => {
 $     return queryInterface.dropTable('users');
 $   },
 $ };
-´´´
+```
 
 ### Créditos
 
