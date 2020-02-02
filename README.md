@@ -18,23 +18,23 @@ Configuramos o ambiente, estruturação de pastas e padronização do código
 #### Comandos utilizados
 
 ```
-$ yarn init -y
-$ yarn add express
-$ yarn add sucrase nodemon -D
-$ docker run --name fastfeet -e POSTGRES_PASSWORD=docker -p 5432:5432 -d postgres
-$ yarn add eslint -D
-$ yarn eslint --init
-$ yarn add prettier eslint-config-prettier eslint-plugin-prettier -D
-$ yarn eslint --fix src --ext .js
-$ yarn add sequelize
-$ yarn add sequelize-cli -D
-$ yarn add pg pg-hstore
-$ yarn sequelize db:migrate
-$ yarn sequelize db:migrate undo
-$ yarn sequelize db:seed:all
-$ yarn add bcryptjs
-$ yarn add jsonwebtoken
-$ yarn add yup
+ yarn init -y
+ yarn add express
+ yarn add sucrase nodemon -D
+ docker run --name fastfeet -e POSTGRES_PASSWORD=docker -p 5432:5432 -d postgres
+ yarn add eslint -D
+ yarn eslint --init
+ yarn add prettier eslint-config-prettier eslint-plugin-prettier -D
+ yarn eslint --fix src --ext .js
+ yarn add sequelize
+ yarn add sequelize-cli -D
+ yarn add pg pg-hstore
+ yarn sequelize db:migrate
+ yarn sequelize db:migrate undo
+ yarn sequelize db:seed:all
+ yarn add bcryptjs
+ yarn add jsonwebtoken
+ yarn add yup
 ```
 
 ### Adicionando middlewares e validações
@@ -57,7 +57,7 @@ $ yarn add yup
 ![](https://raw.githubusercontent.com/fabiovige/bootcamp2019-desafio02/master/images/recipients.jpg)
 
 ```
-$ yarn sequelize migration:create --name=create-recipients
+ yarn sequelize migration:create --name=create-recipients
 ```
 
 ### Atualização da migratiosn users
@@ -66,19 +66,19 @@ $ yarn sequelize migration:create --name=create-recipients
 - Foi criado uma nova migration apenas para adicionar uma coluna conforme recomendação
 
 ```
-$ module.exports = {
-$   up: (queryInterface, Sequelize) => {
-$     return queryInterface.addColumn('users', 'admin', {
-$       type: Sequelize.STRING,
-$       allowNull: false,
-$       defaultValue: false,
-$     });
-$   },
-$
-$  down: queryInterface => {
-$     return queryInterface.dropTable('users');
-$   },
-$ };
+ module.exports = {
+   up: (queryInterface, Sequelize) => {
+     return queryInterface.addColumn('users', 'admin', {
+       type: Sequelize.STRING,
+       allowNull: false,
+       defaultValue: false,
+     });
+   },
+
+  down: queryInterface => {
+     return queryInterface.dropTable('users');
+   },
+ };
 ```
 
 ### Créditos
