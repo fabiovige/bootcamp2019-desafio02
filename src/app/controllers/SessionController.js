@@ -29,9 +29,9 @@ class SessionController {
       return res.status(401).json({ error: 'Password does not match' });
     }
 
-    const { id, name } = user;
+    const { id, name, admin } = user;
 
-    const payload = { id };
+    const payload = { id, admin };
 
     return res.json({
       user: {
