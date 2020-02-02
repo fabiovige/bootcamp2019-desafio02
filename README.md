@@ -51,3 +51,15 @@ $ yarn add bcryptjs
 
 $ yarn add jsonwebtoken
 
+### Adicionando middlewares e validações
+
+Adicionado middleware para controle de autenticação atraves do token gerado
+Adicionado validações
+Autenticaçãocom JWT e validação de entrada dos dados
+
+### Session Create
+![](https://raw.githubusercontent.com/fabiovige/bootcamp2019-desafio02/master/images/session-create.jpg)
+
+#### Comandos utilizados
+
+$ yarn add yup
