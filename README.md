@@ -11,11 +11,12 @@ Configuramos o ambiente, estruturação de pastas e padronização do código
 
 ### Segunda etapa
 
-Cofiguramos o ORM, JWT e subimos um container com o banco de dados postgres usando Docker
-Autenticação com retorno de token
-Sequelize (Utilize PostgreSQL);
+- Cofiguramos o ORM, JWT e subimos um container com o banco de dados postgres usando Docker
+- Autenticação com retorno de token
+- Sequelize (Utilize PostgreSQL);
 
 #### Comandos utilizados
+
 ´´´
 $ yarn init -y
 $ yarn add express
@@ -38,9 +39,9 @@ $ yarn add yup
 
 ### Adicionando middlewares e validações
 
-Adicionado middleware para controle de autenticação atraves do token gerado
-Adicionado validações
-Autenticaçãocom JWT e validação de entrada dos dados
+- Adicionado middleware para controle de autenticação atraves do token gerado
+- Adicionado validações
+- Autenticaçãocom JWT e validação de entrada dos dados
 
 
 ### Session Create
@@ -55,8 +56,9 @@ Autenticaçãocom JWT e validação de entrada dos dados
 ### Recipients
 ![](https://raw.githubusercontent.com/fabiovige/bootcamp2019-desafio02/master/images/recipients.jpg)
 
-
+´´´
 $ yarn sequelize migration:create --name=create-recipients
+´´´
 
 ### Atualização da migratiosn users
 
@@ -64,19 +66,19 @@ $ yarn sequelize migration:create --name=create-recipients
 - Foi criado uma nova migration apenas para adicionar uma coluna conforme recomendação
 
 ´´´
-module.exports = {
-  up: (queryInterface, Sequelize) => {
-    return queryInterface.addColumn('users', 'admin', {
-      type: Sequelize.STRING,
-      allowNull: false,
-      defaultValue: false,
-    });
-  },
-
-  down: queryInterface => {
-    return queryInterface.dropTable('users');
-  },
-};
+$ module.exports = {
+$   up: (queryInterface, Sequelize) => {
+$     return queryInterface.addColumn('users', 'admin', {
+$       type: Sequelize.STRING,
+$       allowNull: false,
+$       defaultValue: false,
+$     });
+$   },
+$
+$  down: queryInterface => {
+$     return queryInterface.dropTable('users');
+$   },
+$ };
 ´´´
 
 ### Créditos
